@@ -16,3 +16,15 @@ code {
   padding: 2px 4px;
   color: #1f1f1f;
 }
+
+@font-face {
+  font-family: "Relevant";
+  src: url("../fonts/Relevant-Normal.woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Relevant";
+  src: url("../fonts/Relevant-Bold.woff");
+  font-weight: bold;
+}
