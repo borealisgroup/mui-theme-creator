@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch } from "react-redux"
-import { defaultThemeId, defaultHeaders } from 'src/utils';
+import { themeUrl, defaultHeaders } from 'src/utils';
 
 export const useLoadInitialTheme = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     (async () => {
-      const responseRaw = await fetch(`https://api.jsonbin.io/b/${defaultThemeId}/latest`, {
+      const responseRaw = await fetch(`${themeUrl}/latest`, {
         headers: {
           ...defaultHeaders
         }

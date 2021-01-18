@@ -22,6 +22,7 @@ import FontIcon from "@material-ui/icons/FontDownload"
 import TypographyIcon from "@material-ui/icons/TextFields"
 import wrapTooltip from "../wrapTooltip"
 import { TutorialLink } from "src/components/Tutorial/TutorialButton"
+import { themeUrl } from "src/utils";
 
 const useStyles = makeStyles(theme => ({
   logo: {
@@ -151,8 +152,7 @@ const DefaultExample = () => {
               </ListItem>
               <ListItem>
                 <Typography variant="body2">
-                  Themes are saved in your browser's <code>localStorage</code>{" "}
-                  so that they'll persist between visits to this site.
+                  Theme is saved in a <a href={themeUrl}>protected JSON bin collection</a>
                 </Typography>
               </ListItem>
               <ListItem>

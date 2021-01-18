@@ -10,10 +10,10 @@ import deepmerge from "deepmerge"
 import { defaultThemeOptions } from "src/siteTheme"
 import { TypographyOptions } from "@material-ui/core/styles/createTypography"
 import { BreakpointValues } from "@material-ui/core/styles/createBreakpoints"
-import { defaultThemeId, defaultHeaders } from 'src/utils';
+import { themeUrl, defaultThemeId, defaultHeaders } from 'src/utils';
 
-const saveThemeOptions = async (themeOptions: typeof defaultThemeOptions) => {
-  const response = await fetch(`https://api.jsonbin.io/b/${defaultThemeId}`, {
+const saveThemeOptions = (themeOptions: typeof defaultThemeOptions) => {
+  fetch(themeUrl, {
     method: 'PUT',
     headers: {
       ...defaultHeaders

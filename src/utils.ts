@@ -81,6 +81,8 @@ export function verbose(...args: any[]) {
 
 export const defaultThemeId = '600562b8e31fbc3bdef51bb5';
 
+export const themeUrl = `https://api.jsonbin.io/b/${defaultThemeId}`;
+
 export const defaultHeaders = {
   'secret-key': '$2b$10$TL/8NrcUysSI6MI//9f52O5kahhnd85GLZ/cXpY/fwGMiCoQ2Ct/m', // you can steal this, I can always generate a new one :)
   'Content-Type': 'application/json'
