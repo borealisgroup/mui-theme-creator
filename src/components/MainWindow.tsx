@@ -77,7 +77,6 @@ const MainWindow = () => {
         >
           <Tab label="Preview" value="preview" id={previewTabId} />
           <Tab label="Components" value="components" id={componentsTabId} />
-          <Tab label="Saved Themes" value="saved" id={savedThemesTabId} />
         </Tabs>
         <Hidden smUp>
           <IconButton onClick={() => dispatch({ type: "TOGGLE_THEME_CONFIG" })}>
