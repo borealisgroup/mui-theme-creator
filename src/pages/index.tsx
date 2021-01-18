@@ -10,6 +10,7 @@ import SmallScreenWarning from "src/components/SmallScreenWarning"
 import ThemeConfigDrawer from "src/components/ThemeConfigDrawer"
 import Tutorial from "src/components/Tutorial"
 import ErrorBoundary from "src/components/ErrorBoundary"
+import { useLoadInitialTheme } from 'src/hooks';
 
 const useStyles = makeStyles(theme => ({
   appRoot: {
@@ -43,7 +44,8 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const IndexPage = () => {
-  const classes = useStyles()
+  const classes = useStyles();
+  useLoadInitialTheme();
   return (
     <Layout>
       <div className={classes.appRoot}>

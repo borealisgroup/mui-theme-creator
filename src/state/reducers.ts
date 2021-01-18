@@ -10,8 +10,17 @@ import deepmerge from "deepmerge"
 import { defaultThemeOptions } from "src/siteTheme"
 import { TypographyOptions } from "@material-ui/core/styles/createTypography"
 import { BreakpointValues } from "@material-ui/core/styles/createBreakpoints"
+import { defaultThemeId, defaultHeaders } from 'src/utils';
 
-const defaultThemeId = generateThemeId({})
+const saveThemeOptions = async (themeOptions: typeof defaultThemeOptions) => {
+  const response = await fetch(`https://api.jsonbin.io/b/${defaultThemeId}`, {
+    method: 'PUT',
+    headers: {
+      ...defaultHeaders
+    },
+    body: JSON.stringify(themeOptions)
+  })
+}
 
 const initialState: RootState = {
   editor: editorInitialState,
@@ -37,7 +46,7 @@ const initialState: RootState = {
   mobileWarningSeen: false,
 }
 
-const initialFonts = ["Droid Sans", "Droid Serif", "Open Sans", "Roboto"]
+const initialFonts = ["Droid Sans", "Droid Serif", "Open Sans", "Roboto", "Relevant"]
 
 export default (state = initialState, action) => {
   // run editor reducers
@@ -72,7 +81,8 @@ export default (state = initialState, action) => {
       return state
     case "SAVE_THEME_INPUT":
     case "UPDATE_THEME":
-      return {
+      if(!action.initial) saveThemeOptions(action.themeOptions);
+      const updatedTheme = {
         ...state,
         themeOptions: action.themeOptions,
         themeObject: createPreviewMuiTheme(
@@ -93,8 +103,10 @@ export default (state = initialState, action) => {
           },
         },
       }
+
+      return updatedTheme;
     case "ADD_NEW_THEME":
-      const newThemeId = generateThemeId(state)
+      const newThemeId = defaultThemeId
       return {
         ...state,
         themeId: newThemeId,
@@ -116,7 +128,22 @@ export default (state = initialState, action) => {
           state.loadedFonts
         ),
       }
+    case "LOAD_INITIAL_THEME": {
+      const newThemeId = defaultThemeId;
+      return {
+        ...state,
+        savedThemes: {
+          ...state.savedThemes,
+          [newThemeId]: {
+            ...state.savedThemes[newThemeId],
+            ...action.savedTheme,
+            lastUpdated: new Date().toISOString(),
+          },
+        },
+      }
+    }
     case "LOAD_THEME":
+      console.log("LOAD_THEME");
       return {
         ...state,
         themeId: action.themeId,
