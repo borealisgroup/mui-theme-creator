@@ -38,6 +38,15 @@ export default function ButtonsExample() {
         <Button variant="contained" color="primary" href="#contained-buttons">
           Link
         </Button>
+        <Button variant="contained" size="large">
+          Large
+        </Button>
+        <Button variant="contained" size="medium">
+          Medium
+        </Button>
+        <Button variant="contained" size="small">
+          Small
+        </Button>
       </div>
 
       <Typography variant="h6" id="text-buttons">
@@ -50,6 +59,15 @@ export default function ButtonsExample() {
         <Button disabled>Disabled</Button>
         <Button color="primary" href="#text-buttons">
           Link
+        </Button>
+        <Button size="large">
+          Large
+        </Button>
+        <Button size="medium">
+          Medium
+        </Button>
+        <Button size="small">
+          Small
         </Button>
       </div>
 
@@ -69,6 +87,15 @@ export default function ButtonsExample() {
         </Button>
         <Button variant="outlined" color="primary" href="#outlined-buttons">
           Link
+        </Button>
+        <Button variant="outlined" size="large">
+          Large
+        </Button>
+        <Button variant="outlined" size="medium">
+          Medium
+        </Button>
+        <Button variant="outlined" size="small">
+          Small
         </Button>
       </div>
 
@@ -113,6 +140,23 @@ export default function ButtonsExample() {
           startIcon={<SaveIcon />}
         >
           Save
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          endIcon={<SaveIcon />}
+        >
+          Right
+        </Button>
+        <Button variant="contained" size="large" startIcon={<SaveIcon />}>
+          Large
+        </Button>
+        <Button variant="contained" size="medium" startIcon={<SaveIcon />}>
+          Medium
+        </Button>
+        <Button variant="contained" size="small" startIcon={<SaveIcon />}>
+          Small
         </Button>
       </div>
     </div>
