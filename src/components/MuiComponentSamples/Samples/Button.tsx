@@ -141,14 +141,6 @@ export default function ButtonsExample() {
         >
           Save
         </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          endIcon={<SaveIcon />}
-        >
-          Right
-        </Button>
         <Button variant="contained" size="large" startIcon={<SaveIcon />}>
           Large
         </Button>
@@ -157,6 +149,30 @@ export default function ButtonsExample() {
         </Button>
         <Button variant="contained" size="small" startIcon={<SaveIcon />}>
           Small
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          endIcon={<SaveIcon />}
+        >
+          Right Large
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          size="medium"
+          endIcon={<SaveIcon />}
+        >
+          Right Medium
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          size="small"
+          endIcon={<SaveIcon />}
+        >
+          Right Small
         </Button>
       </div>
     </div>
