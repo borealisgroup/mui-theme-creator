@@ -59,17 +59,15 @@ export default function TabsExample() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
-        >
-          <Tab label="Recents" {...a11yProps(0)} />
-          <Tab label="Favourites" {...a11yProps(1)} />
-          <Tab label="Nearby" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        aria-label="simple tabs example"
+      >
+        <Tab label="Recents" {...a11yProps(0)} />
+        <Tab label="Favourites" {...a11yProps(1)} />
+        <Tab label="Nearby" {...a11yProps(2)} />
+      </Tabs>
       <TabPanel value={value} index={0}>
         Item One
       </TabPanel>
@@ -80,17 +78,15 @@ export default function TabsExample() {
         Item Three
       </TabPanel>
 
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
-        >
-          <Tab icon={<PhoneIcon />} label="Recents" {...a11yProps(0)} />
-          <Tab icon={<FavoriteIcon />} label="Favourites" {...a11yProps(1)} />
-          <Tab icon={<PersonPinIcon />} label="Nearby" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        aria-label="simple tabs example"
+      >
+        <Tab icon={<PhoneIcon />} label="Recents" {...a11yProps(0)} />
+        <Tab icon={<FavoriteIcon />} label="Favourites" {...a11yProps(1)} />
+        <Tab icon={<PersonPinIcon />} label="Nearby" {...a11yProps(2)} />
+      </Tabs>
       <TabPanel value={value} index={0}>
         Item One
       </TabPanel>
