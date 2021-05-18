@@ -24,7 +24,7 @@ export default function TooltipExample() {
           <DeleteIcon />
         </IconButton>
       </Tooltip>
-      <Tooltip title="Add" aria-label="add">
+      <Tooltip title="Add" arrow aria-label="add">
         <Fab color="primary" className={classes.fab}>
           <AddIcon />
         </Fab>
