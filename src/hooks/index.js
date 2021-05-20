@@ -14,7 +14,7 @@ export const useLoadInitialTheme = () => {
       const response = await responseRaw.json();
       dispatch({
         type: "UPDATE_THEME",
-        themeOptions: response,
+        themeOptions: response.record,
         initial: true
       })
     })()
