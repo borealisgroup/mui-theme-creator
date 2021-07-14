@@ -54,7 +54,7 @@ export default function SelectExample() {
           </MenuItem>
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={30}>Thirty I'm very long</MenuItem>
         </Select>
         <FormHelperText>Some important helper text</FormHelperText>
       </FormControl>
@@ -184,7 +184,7 @@ export default function SelectExample() {
         </Select>
         <FormHelperText>Placeholder</FormHelperText>
       </FormControl>
-      <FormControl required className={classes.formControl}>
+      <FormControl required variant="" className={classes.formControl}>
         <InputLabel id="demo-simple-select-required-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-required-label"
@@ -201,39 +201,6 @@ export default function SelectExample() {
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
         <FormHelperText>Required</FormHelperText>
-      </FormControl>
-      <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
-          value={age}
-          onChange={handleChange}
-          label="Age"
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
       </FormControl>
     </div>
   )
