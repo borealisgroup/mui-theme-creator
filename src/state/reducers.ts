@@ -12,15 +12,6 @@ import { TypographyOptions } from "@material-ui/core/styles/createTypography"
 import { BreakpointValues } from "@material-ui/core/styles/createBreakpoints"
 import { themeUrl, defaultThemeId, defaultHeaders } from 'src/utils';
 
-const saveThemeOptions = (themeOptions: typeof defaultThemeOptions) => {
-  fetch(themeUrl, {
-    method: 'PUT',
-    headers: {
-      ...defaultHeaders
-    },
-    body: JSON.stringify(themeOptions)
-  })
-}
 
 const initialState: RootState = {
   editor: editorInitialState,
@@ -81,7 +72,6 @@ export default (state = initialState, action) => {
       return state
     case "SAVE_THEME_INPUT":
     case "UPDATE_THEME":
-      if(!action.initial) saveThemeOptions(action.themeOptions);
       const updatedTheme = {
         ...state,
         themeOptions: action.themeOptions,
